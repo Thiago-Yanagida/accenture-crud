@@ -1,0 +1,55 @@
+
+<div class="container">
+    
+    <div class="d-flex align-items-center justify-content-end w-100 mt-3">
+        <button type="button" class="btn btn-info btn-sm" (click)="filterItem()">
+            Filtrar
+        </button>
+        <button (click)="editItem(null)">
+            Adicionar +
+        </button>
+    </div> 
+    <div class="table-filter">
+        <p class="col-2">Filtrar por</p>
+        <select class="form-control col-4" [formControl]="aplicationText">
+            <option value="{{option.codigoDominioConteudo}}" *ngFor="let option of inputOption?.dominiosconteudos">
+                {{option.descricaoDominioConteudo}}
+            </option>
+        </select>
+        <input class="form-control col-2 mb-3    mt-3" placeholder="Código" [formControl]="codeText">
+        <input class="form-control col-4 mb-3" placeholder="Nome Retorno" [formControl]="rNameText">
+        
+        
+        <table *ngIf="tablePopulation?.descricoesretorno">
+            <tr>
+                <th>Aplicação</th>
+                <th>Código</th>
+                <th>Nome Retorno</th>
+                <th>Editar</th>
+            </tr>
+            <tr *ngFor="let item of tablePopulation.descricoesretorno">
+                <td>{{item.codigoAplicacao}}</td>
+                <td>{{item.codigoDescricaoRetorno}}</td>
+                <td>{{item.nomeDescricaoRetorno}}</td>
+                <td>
+                    <button type="button" class="btn btn-light btn-sm" (click)="editItem(item)">
+                        editar
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm" (click)="delete(item.identificadorDescricaoRetorno)">
+                        excluir
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+</div>
+
+<div class="numberPages mt-3">
+    <pagination
+    [itemsPerPage]="20"
+    (pageChanged)="pageEvent($event)"
+    [totalItems]="totalItens"
+  >
+    </pagination>
+</div>

@@ -1,0 +1,31 @@
+<div class="block">
+    <div class="title">
+        <p>Dados principais</p>
+    </div>
+    <div class="fLine">
+        <label>Aplicação*:</label><br>
+        <select [formControl]="aplicationText">
+            <option value="{{eOption.codigoDominioConteudo}}" *ngFor="let eOption of eOpitionInput?.dominiosconteudos">
+                {{eOption.descricaoDominioConteudo}}
+            </option>
+        </select>
+        <div>
+            <label>Código*:</label><br>
+            <input [formControl]="codeText">
+        </div>
+        <div>
+            <label>Nome Retorno*:</label><br>
+            <input [formControl]="rNameText">
+        </div>
+    </div>
+    <div class="sLine">
+        <label>Texto Retorno:</label><br>
+        <textarea rows="5" cols="89"
+         [formControl]="mensageText"></textarea>
+    </div>
+    <div class="divButton">
+        <button (click)="goHome()">Voltar</button>
+        <button (click)="saveItem()" type="button"
+            [disabled]="!aplicationText.value || !codeText.value || !rNameText.value">Salvar</button>
+    </div>
+</div>

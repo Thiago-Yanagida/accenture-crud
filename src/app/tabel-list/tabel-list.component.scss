@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.table-filter {
+    width: 100%;
+    text-align: center;
+
+}
+
+table {
+    width: 100%;
+    
+    td {
+        text-align: center;
+    }
+}
+
+th {
+    text-transform: uppercase;
+}
+
+tr {
+    height: 30px;
+}
+
+tr:first-child {
+   background-color: #6A5ACD;
+   position: sticky;
+    top:10px;
+    color: white;
+}
+
+tr:nth-child(odd):not(:first-child) {
+    background:rgba(lightgray, .5);
+    
+}
+
+button {
+    margin: 0 10px;
+    border-radius: 8px;
+    
+}
+
+p {
+    font-size: larger;
+    font-family: 'Segoe UI';
+    text-align: left;
+    
+}
+
+.numberPages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.top {
+    z-index: 999;
+    width: 100%;
+    height: 23px;
+    justify-content: right;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 80%;
+}

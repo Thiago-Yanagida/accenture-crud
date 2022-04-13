@@ -1,0 +1,66 @@
+.block {
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    width: 100%;
+    border: 1px solid lightgray;
+    width: min-content;
+    margin: 50px auto;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+.title{
+    background-color: #6A5ACD;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 10px;
+
+    p {
+        margin: 0;
+
+    }
+
+}
+
+.fLine {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.sLine {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.divButton {
+    width: 80%;
+    text-align: right;
+    align-items: flex-end;
+}
+
+button {
+    margin: 0 10px;
+    border-radius: 12px;
+}
+
+input {
+    margin-bottom: 15px;
+}
+
+select {
+    margin-bottom: 15px;
+}
+
+textarea {
+    resize: none;
+}
