@@ -21,8 +21,8 @@ export class EditItemComponent implements OnInit {
 
 
   constructor(private appService: AppService, private jobService: JobService) {
-    this.itemSelected = this.appService.itemSelected;  //buscando o usuário da service (itemSelected) 
-    this.aplicationText = new FormControl('');  //formcontrol administra os eventos que acontecem  o input
+    this.itemSelected = this.appService.itemSelected;  
+    this.aplicationText = new FormControl('');  
     this.codeText = new FormControl('');
     this.rNameText = new FormControl('');
     this.mensageText = new FormControl('');
@@ -34,8 +34,8 @@ export class EditItemComponent implements OnInit {
   }
 
   initForm() {
-    this.aplicationText = new FormControl(this.itemSelected ? this.itemSelected.codigoAplicacao : ''); //aqui ele verifica se o itemSelected tem valor caso ele nao tenha ele retorna uma string vazia caso tenha ele seta o valor selecionado nos inputs 'ele só poem o valor no input caso selecione editar'
-    this.codeText = new FormControl(this.itemSelected ? this.itemSelected.codigoDescricaoRetorno : ''); //o ? significa 'if' o ':' significa else
+    this.aplicationText = new FormControl(this.itemSelected ? this.itemSelected.codigoAplicacao : ''); 
+    this.codeText = new FormControl(this.itemSelected ? this.itemSelected.codigoDescricaoRetorno : ''); 
     this.rNameText = new FormControl(this.itemSelected ? this.itemSelected.nomeDescricaoRetorno : '');
     this.mensageText = new FormControl(this.itemSelected ? this.itemSelected.mensagemDescricaoRetorno : '');
 
@@ -46,12 +46,12 @@ export class EditItemComponent implements OnInit {
     const item = {
       "identificadorDescricaoRetorno": null,
       "codigoAplicacao": this.aplicationText.value,
-      "codigoDescricaoRetorno": this.codeText.value,  //a função cria um objeto com os valores inseridos nos inputs
+      "codigoDescricaoRetorno": this.codeText.value,  
       "nomeDescricaoRetorno": this.rNameText.value,
       "mensagemDescricaoRetorno": this.mensageText.value
     };
     if (this.itemSelected){
-      item.identificadorDescricaoRetorno = this.itemSelected.identificadorDescricaoRetorno; //este if serve para saber se o itemSelected tem valor, caso tenha ele ja sabe que é uma edição então ele só edita e salva, caso nao seja ele ja sabe que é da função de adicionar
+      item.identificadorDescricaoRetorno = this.itemSelected.identificadorDescricaoRetorno; 
       this.jobService.editItem(item).subscribe();
     } else {
       this.jobService.saveItem(item).subscribe();
@@ -62,7 +62,7 @@ export class EditItemComponent implements OnInit {
   }
 
   goHome() {
-    this.appService.goHome();  //esta função serve somente para retornar para a pagina inicial (tabel-list)
+    this.appService.goHome();  
   }
 
   editSelectInput() {
